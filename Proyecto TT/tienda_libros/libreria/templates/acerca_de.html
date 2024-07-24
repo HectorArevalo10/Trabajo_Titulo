@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de - Librería Digital</title>
+    <link rel="stylesheet" href="{% static 'css/acerca_de.css' %}">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Librería Digital</h1>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="{% url 'landing_page' %}">Inicio</a></li>
+                    <li><a href="{% url 'acerca_de' %}">Acerca de</a></li>
+                    <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                    <li><a href="{% url 'register' %}">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Sección Acerca de -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <p class="section-description">
+                    Bienvenido a nuestra Biblioteca Digital, un espacio creado para los amantes de la lectura y el conocimiento. 
+                    <br><br>
+                    Nuestra misión es proporcionar acceso a una amplia gama de libros y recursos educativos de manera fácil y conveniente, 
+                    permitiendo a nuestros usuarios explorar, aprender y disfrutar de la lectura desde cualquier lugar y en cualquier momento.
+                    <br><br>
+                    Nuestra Visión
+                    <br>
+                    Aspiramos a ser la plataforma líder en la promoción de la cultura y la educación a través de la tecnología digital. 
+                    Creemos en el poder transformador de la lectura y nos comprometemos a hacer que la literatura y el conocimiento sean accesibles para todos.
+                    <br><br>
+                    Qué Ofrecemos
+                    <br><br>
+                    Amplia Colección de Libros: Desde clásicos literarios hasta las últimas novedades, nuestra colección abarca una variedad de géneros y temáticas para satisfacer los gustos de todos los lectores.
+                    <br><br>
+                    Acceso Fácil y Conveniente: Con solo unos clics, puedes acceder a nuestra biblioteca desde tu dispositivo preferido, sin importar dónde te encuentres.
+                    <br><br>
+                    Interfaz Amigable: Nuestra plataforma está diseñada para ser intuitiva y fácil de usar, permitiendo una experiencia de lectura agradable y sin complicaciones.
+                    <br><br>
+                    Recursos Educativos: Además de libros, ofrecemos una gama de recursos educativos, incluidos artículos, ensayos y material de referencia para apoyar tu aprendizaje y crecimiento personal.
+                    <br><br>
+                    Nuestro Compromiso
+                    <br> 
+                    Nos comprometemos a mantener una plataforma inclusiva y accesible para todos. Valoramos la diversidad y trabajamos continuamente para mejorar 
+                    y expandir nuestra colección, asegurando que siempre haya algo nuevo e interesante para descubrir.
+                    <br><br>
+                    Únete a Nosotros
+                    <br>
+                    Únete a nuestra comunidad de lectores apasionados y disfruta de los innumerables beneficios de ser parte de nuestra Biblioteca Digital. 
+                    Ya sea que busques inspiración, conocimiento o simplemente un buen libro para relajarte, estamos aquí para acompañarte en cada paso de tu viaje literario.
+
+
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Librería Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

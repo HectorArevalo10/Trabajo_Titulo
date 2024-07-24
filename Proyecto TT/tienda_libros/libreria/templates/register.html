@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registrarse</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Registrarse</button>
+        </form>
+        <br>
+        <!-- Botón de Volver -->
+        <form action="{% url 'landing_page' %}" method="get">
+            <button type="submit" class="btn-back">Volver</button>
+        </form>
+    </div>
+
+</body>
+</html>

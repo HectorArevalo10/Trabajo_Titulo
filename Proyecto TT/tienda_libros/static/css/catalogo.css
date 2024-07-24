@@ -1,0 +1,241 @@
+/* Estilos generales */
+html, body {
+    height: 100%;
+    margin: 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal de la página */
+.main-content {
+    flex: 1;
+}
+
+/* Encabezado */
+.header {
+    background-color: rgba(255, 166, 0, 0.8);
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header .logo {
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar {
+    float: right;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de Filtro y Búsqueda */
+.filter-search-section {
+    padding: 20px;
+}
+
+.filter-search-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ajusta el contenido cuando hay poco espacio */
+}
+
+.filter-section, .search-form {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+.search-form form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.search-form button, .btn-back {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.search-form button:hover, .btn-back:hover {
+    background-color: #0056b3;
+}
+
+.filter-section label {
+    font-size: 18px;
+}
+
+.filter-section select {
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* Sección de Libros */
+.books-section {
+    padding: 60px 0;
+}
+
+.books-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.book-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    flex: 1 1 30%;
+    color: #000;
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho */
+}
+
+.book-item h3 {
+    margin: 0 0 10px;
+    color: #000;
+}
+
+/* Pie de página */
+.footer {
+    background-color: rgba(255, 166, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilos específicos para la página de detalles del libro */
+.book-detail-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.book-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.book-image img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.book-details {
+    max-width: 600px;
+    text-align: left;
+}
+
+.book-details h2 {
+    margin: 0 0 20px;
+}
+
+.book-details p {
+    margin: 10px 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header .logo {
+        font-size: 20px;
+    }
+
+    .nav-list li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .filter-search-wrapper {
+        flex-direction: column;
+    }
+
+    .filter-section, .search-form {
+        margin: 10px 0;
+    }
+
+    .books-list {
+        flex-direction: column;
+    }
+
+    .book-item {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .logo {
+        font-size: 18px;
+    }
+
+    .search-form input[type="text"] {
+        font-size: 14px;
+    }
+
+    .search-form button, .btn-back {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .book-detail-section {
+        padding: 10px;
+    }
+
+    .book-details {
+        max-width: 100%;
+    }
+}

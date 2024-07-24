@@ -1,0 +1,153 @@
+/* Estilos generales */
+html, body {
+    height: 100%;
+    margin: 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Encabezado */
+.header {
+    background-color: rgba(255, 166, 0, 0.8); /* Color de fondo semi-transparente */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header .logo {
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar {
+    float: right;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el botón de cerrar sesión */
+.nav-list li form button {
+    background: transparent; 
+    border: none;
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 16px; 
+    cursor: pointer;  
+    padding: 0; 
+    margin: 0; 
+    display: inline; 
+}
+
+.nav-list li form button:hover {
+    text-decoration: underline; /* Opcional: agrega subrayado en el estado de hover */
+}
+
+/* Secciones */
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-description {
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Pie de página */
+.footer {
+    background-color: rgba(255, 166, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header .logo {
+        font-size: 20px;
+    }
+
+    .navbar {
+        float: none;
+        text-align: center;
+    }
+
+    .nav-list {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-list li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-list li a {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .logo {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-description {
+        font-size: 14px;
+    }
+
+    .footer {
+        padding: 15px 0;
+    }
+}

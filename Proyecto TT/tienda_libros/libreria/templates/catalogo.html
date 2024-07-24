@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Libros</title>
+    <link rel="stylesheet" href="{% static 'css/catalogo.css' %}">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Catálogo de Libros</h1>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="{% url 'landing_page' %}">Inicio</a></li>
+                    <li><a href="{% url 'acerca_de' %}">Acerca de</a></li>
+                    <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                    <li><a href="{% url 'register' %}">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Sección de Filtro y Búsqueda -->
+        <section class="filter-search-section">
+            <div class="container">
+                <div class="filter-search-wrapper">
+                    <!-- Sección de Filtro -->
+                    <div class="filter-section">
+                        <label for="genre-filter">Filtrar por género:</label>
+                        <select id="genre-filter" onchange="window.location.href=this.value;">
+                            <option value="{% url 'catalogo' %}?genero=all" {% if selected_genero == 'all' %}selected{% endif %}>Todos los géneros</option>
+                            {% for genero in generos %}
+                                <option value="{% url 'catalogo' %}?genero={{ genero }}" {% if selected_genero == genero %}selected{% endif %}>{{ genero }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Formulario de búsqueda -->
+                    <div class="search-form">
+                        <form method="get" action="{% url 'catalogo' %}">
+                            <input type="text" name="search" placeholder="Buscar por nombre" value="{{ query }}">  
+                            <button type="submit">Buscar</button>
+                            <a href="{% url 'catalogo' %}" class="btn btn-back">Volver</a> <!-- Nuevo botón "Volver" -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Libros -->
+        <section class="books-section">
+            <div class="container">
+                <div class="books-list">
+                    {% for libro in libros %}
+                    <div class="book-item">
+                        <h3>{{ libro.titulo }}</h3>
+                        <p><strong>Autor:</strong> {{ libro.autor }}</p>
+                        <p><strong>Editorial:</strong> {{ libro.editorial }}</p>
+                        <p><strong>Género:</strong> {{ libro.genero }}</p>
+                        <a href="{% url 'libro_detalle' libro.id %}" class="btn">Ver Detalles del libro</a>
+                    </div>                    
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Librería Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

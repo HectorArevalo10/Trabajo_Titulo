@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Librería Digital</title>
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Librería Digital</h1>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="{% url 'landing_page' %}">Inicio</a></li>
+                    <li><a href="{% url 'acerca_de' %}">Acerca de</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="{% url 'perfil' %}" class="active">Mi Perfil</a></li>
+                    <li>
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">
+                                Cerrar sesión
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <!-- Sección Acerca de -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Bienvenido a tu Perfil en la Librería Digital</h2>
+                <p class="section-description">
+                    Aquí puedes gestionar tu información personal y preferencias de cuenta.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección Catálogo -->
+        <section id="catalogo" class="section">
+            <div class="container">
+                <h2 class="section-title">Tu Catálogo Personalizado</h2>
+                <!-- Puedes agregar contenido específico del perfil del usuario aquí -->
+            </div>
+        </section>  
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Librería Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

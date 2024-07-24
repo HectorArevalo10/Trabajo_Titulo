@@ -1,0 +1,56 @@
+{% load static %}
+<!-- libreria/templates/landing_page.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a la Librería</title>
+    <!-- Enlaces a archivos de estilos CSS -->
+    <link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Librería Digital</h1>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="{% url 'acerca_de' %}">Acerca de</a></li>
+                    <li><a href="{% url 'catalogo' %}">Catálogo</a></li> 
+                    <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                    <li><a href="{% url 'register' %}">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Sección Acerca de -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Bienvenido a nuestra Librería Digital</h2>
+                <p class="section-description">
+                    Nos complace darle la bienvenida a nuestra plataforma. En nuestra librería digital, encontrará una extensa colección de libros, 
+                    desde los clásicos más reconocidos hasta las últimas publicaciones en diversos géneros.
+                    Estamos comprometidos a ofrecerle una experiencia de lectura excepcional y personalizada. 
+                    Le invitamos a explorar nuestro catálogo y gestionar sus préstamos con facilidad. 
+                    Si requiere asistencia adicional o tiene alguna consulta, 
+                    nuestro equipo de atención al cliente está a su disposición para ayudarle. 
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Librería Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ libro.titulo }} - Detalles</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/catalogo.css' %}">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Detalle del Libro</h1>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="{% url 'landing_page' %}">Inicio</a></li>
+                    <li><a href="{% url 'acerca_de' %}">Acerca de</a></li>
+                    <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                    <li><a href="{% url 'register' %}">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <section class="book-detail-section">
+            <div class="container">
+                <div class="book-image">
+                    {% if libro.imagen %}
+                        <img src="{{ libro.imagen.url }}" alt="{{ libro.titulo }}">
+                    {% else %}
+                        <p>No image available</p>
+                    {% endif %}
+                </div>
+                <div class="book-details">
+                    <h2>{{ libro.titulo }}</h2>
+                    <p><strong>Autor:</strong> {{ libro.autor }}</p>
+                    <p><strong>Editorial:</strong> {{ libro.editorial }}</p>
+                    <p><strong>Género:</strong> {{ libro.genero }}</p>
+                    <p><strong>Descripción:</strong> {{ libro.descripcion }}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Librería Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
